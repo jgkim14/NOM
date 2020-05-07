@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Crash;
 
 public class MoveCharacter : MonoBehaviour
 {
