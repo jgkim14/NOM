@@ -27,7 +27,7 @@ public class blocks : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "reversal")
+        if (collision.gameObject.tag == "reversal") // 반전블럭
         {
             MoveCharacter.Jumpcount = 0;
             if (Force2D.force == FloorVector)
@@ -43,10 +43,11 @@ public class blocks : MonoBehaviour
                 Force2D.force = LeftVector;
         }
 
-        if (collision.gameObject.tag == "crash")
+        if (collision.gameObject.tag == "crash") // 몬스터, 장애물 통합
         {
             Return();
         }
+
     }
 
 
@@ -68,7 +69,7 @@ public class blocks : MonoBehaviour
             else if (Force2D.force == RightVector)
                 Force2D.force = LeftVector;
         }*/
-        if (collision.gameObject.tag == "crash")
+        if (collision.gameObject.tag == "crash") // 충돌
         {
             Return();
         }
@@ -86,7 +87,7 @@ public class blocks : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "crash")
+        if (collision.gameObject.tag == "crash") // 충돌
         {
             Return();
         }
@@ -96,7 +97,7 @@ public class blocks : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "crash")
+        if (collision.gameObject.tag == "crash") // 충돌
         {
             Return();
         }

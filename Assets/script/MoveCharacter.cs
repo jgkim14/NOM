@@ -450,7 +450,7 @@ public class MoveCharacter : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.tag == "floor" || collision.gameObject.tag == "rightwall" || collision.gameObject.tag == "celling" || collision.gameObject.tag == "leftwall")
+        if (collision.gameObject.tag == "floor" || collision.gameObject.tag == "rightwall" || collision.gameObject.tag == "celling" || collision.gameObject.tag == "leftwall"|| collision.gameObject.tag == "nogravityline")
         {
             CrashUnit = true;
             MoveCharacter.anim.SetBool("jump", false);
@@ -458,6 +458,18 @@ public class MoveCharacter : MonoBehaviour
             MyRigid.velocity = new Vector2(0, 0);
             turnjump = 0;
 
+        }
+        if(collision.gameObject.tag == "moveblocks")
+        {
+            CrashUnit = true;
+            MoveCharacter.anim.SetBool("jump", false);
+            MoveCharacter.anim.SetBool("walk", false);
+            MoveCharacter.anim.SetBool("stay", true);
+            MoveCharacter.Jumpcount = Status.Jumpcount;
+            MyRigid.velocity = new Vector2(0, 0);
+            turnjump = 0;
+            a = false;
+            b = false;
         }
         
 
