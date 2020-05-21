@@ -9,7 +9,7 @@ public class Status : MonoBehaviour
 
 
     public static float Life = 1;
-    public static float Speed = 6.0f;
+    public static float Speed = 8.0f;
     public static float DashPower = 10.0f;
     public static float Jumpcount = 2.0f;
     public static float JumpPower = 8.0f;
